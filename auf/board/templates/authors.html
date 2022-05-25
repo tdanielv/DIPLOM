@@ -1,0 +1,10 @@
+{% extends 'main_page.html'%}
+
+{% block content %}
+{% for author in authors %}
+
+<a type="button" class="btn btn-light" href="{% url 'author_detail' author.id %}">{{author.author}}<br></a>
+
+{% endfor %}
+
+{% endblock %}

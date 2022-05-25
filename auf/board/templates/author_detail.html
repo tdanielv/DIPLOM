@@ -1,0 +1,14 @@
+{% extends 'main_page.html'%}
+{% block page_name %}
+<h2>
+    {{author.author}}
+</h2>
+{% endblock %}
+{% block content %}
+    <h1>{{author.author}}</h1>
+{% for book in books %}
+{{book.title}}
+<img src="{{book.img.url}}" alt="" height="" >
+{% endfor %}
+
+{% endblock %}

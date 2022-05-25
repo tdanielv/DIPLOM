@@ -1,0 +1,20 @@
+{% extends 'main_page.html'%}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <ul style="">
+        <p>Название книги {{form.title}}</p>
+        <p>Жанр {{form.genre}}<a href="/add_genre/">+</a> </p>
+        <p>Год выпуска {{form.year}}<a href="/add_year/">+</a> </p>
+        <p>Автор {{form.author}}<a href="/add_author/">+</a> </p>
+        <p>Описание {{form.description}}</p>
+        <p>Изображение обложки {{form.img}}</p>
+        <p>Цена {{form.price}}</p>
+        <p>Состояние {{form.condition}}</p>
+    </ul>
+<!--    {{form.title}}-->
+    <button>Отправить</button>
+</form>
+
+{% endblock %}

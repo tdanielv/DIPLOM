@@ -1,0 +1,35 @@
+{% extends 'main_page.html'%}
+{% block page_name %}
+<h2>
+    Страница поиска
+</h2>
+{% endblock %}
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h7>По названию:</h7>
+    {{form.title}}
+    <button>Gоиск</button>
+</form>
+{% for l in list%}
+        <div class="container">
+            <a href="{% url 'detail' l.id %}"><h3>{{l.title}}</h3></a>
+            <div class="row align-items-start">
+                <div class="col">
+                    <img src='{{books.img.url}}' alt=""> <p>здесь будет картинка</p>
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class="col">
+                    {{l.author}}
+                </div>
+                <div class="col">
+                    {{l.year}}
+                </div>
+                <div class="col">
+                    {{l.price}}$
+                </div>
+                <div class="row align-items-start"><div class="col">{{l.description}}</div></div>
+                {% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main_page.html'%}
+{% block page_name %}
+<h2>
+    {{book.title}}
+</h2>
+{% endblock %}
+{% block content %}
+    <ul style="">
+        <p>Жанр {{book.genre}}</p>
+        <p>Год выпуска {{book.year}}</p>
+        <p>Автор {{book.author}}</p>
+        <p>Описание {{book.description}}</p>
+        <p><img src='{{book.img.url}}' alt=""></p>
+        <p>Цена {{book.price}}</p>
+        <p>Состояние {{book.condition}}</p>
+        <p class="price">${{book.price}}</p>
+        <form action="#" method="post">
+            {{cart_product_form}}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
+    </ul>
+</form>
+
+{% endblock %}

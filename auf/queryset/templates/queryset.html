@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Когда QuerySet будет вычислен</h1>
+<p>1) Итерация <br>
+2) Ограничение выборки<br>
+3) Кэширование<br>
+4) repr()<br>
+5) len()<br>
+6) list()   entry_list = list(Entry.objects.all())<br>
+7) bool()    if Entry.objects.filter(headline="Test"):<br>
+   print("There is at least one Entry with the headline Test")<br>
+
+    <h1>Методы которые возвращают QuerySet:</h1><br>
+  filter<br>
+exclude<br>
+annotate<br>
+order_by<br>
+reverse<br>
+distinct<br>
+values<br>
+values_list<br>
+dates<br>
+datetimes<br>
+none<br>
+all<br>
+select_related<br>
+prefetch_related<br>
+extra<br>
+defer<br>
+only<br>
+using<br>
+select_for_update<br>
+raw<br>
+
+<h1>Методы которые возвращают QuerySet:</h1><br>
+    get<br>
+create<br>
+get_or_create<br>
+update_or_create<br>
+bulk_create<br>
+count<br>
+in_bulk<br>
+iterator<br>
+latest<br>
+earliest<br>
+first<br>
+last<br>
+aggregate<br>
+exists<br>
+update<br>
+delete<br>
+as_manager<br>
+  <br>
+
+
+
+</p>
+
+{% for book in books%}
+<a href="">{{book.name}}--{{book.price}}--{{book.publisher}}</a> <br>
+{% endfor %}
+
+
+</body>
+</html>

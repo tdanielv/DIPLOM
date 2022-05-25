@@ -1,0 +1,29 @@
+{% extends 'main_page.html' %}
+{% block page_name %}
+<h1>{{product.title}}</h1>
+{% endblock %}
+{% block content %}
+<table class="table table-bordered">
+  <tr>
+    <td>Страны производители</td>
+  </tr>
+
+  <tr>
+
+    <td>
+     <table class="table table-bordered">
+       <tr>
+         <td>id</td>
+         <td>Producers</td>
+       </tr>
+       {% for producer in producers %}
+       <tr>
+         <td>{{producer.id}}</td>
+         <td>{{producer.title}}</td>
+       </tr>
+       {% endfor %}
+     </table>
+    </td>
+  </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'main_page.html'%}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <ul>
+        {{form.as_ul}}
+    </ul>
+    <button>Отправить</button>
+</form>
+
+{% endblock %}

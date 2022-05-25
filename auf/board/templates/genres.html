@@ -1,0 +1,9 @@
+{% extends 'main_page.html'%}
+
+{% block content %}
+{% for genre in genres %}
+<a type="button" class="btn btn-light"  href="{% url 'genre_detail' genre.id %}">{{genre.genre}}<br></a>
+
+{% endfor %}
+
+{% endblock %}

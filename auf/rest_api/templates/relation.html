@@ -1,0 +1,43 @@
+{% extends 'main_page.html' %}
+{% block page_name %}
+<h1>Таблица взаимосвязей</h1>
+{% endblock %}
+{% block content %}
+<table class="table table-bordered">
+  <tr>
+    <td>Производитель</td>
+    <td>Продукты производства</td>
+  </tr>
+
+  <tr>
+     <td>
+     <table class="table table-bordered">
+       <tr>
+         <td>id</td>
+         <td>Название</td>
+       </tr>
+       {% for producer in producers %}
+       <tr>
+         <td><a href="{% url 'rest_api:producer_detail' producer.id%}">{{producer.id}}</a></td>
+         <td><a href="{% url 'rest_api:producer_detail' producer.id%}">{{producer.title}}</a></td>
+       </tr>
+       {% endfor %}
+     </table>
+    </td>
+    <td>
+     <table class="table table-bordered">
+       <tr>
+         <td>id</td>
+         <td>Production</td>
+       </tr>
+       {% for product in productions %}
+       <tr>
+         <td><a href="{% url 'rest_api:production_detail' product.id %}">{{product.id}}</a></td>
+         <td><a href="{% url 'rest_api:production_detail' product.id %}">{{product.title}}</a></td>
+       </tr>
+       {% endfor %}
+     </table>
+    </td>
+  </tr>
+</table>
+{% endblock %}
